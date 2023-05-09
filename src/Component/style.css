@@ -1,0 +1,112 @@
+body{
+    background-color: rgb(233, 147, 61);
+}
+.block{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+.block_name{
+    color: white;
+}
+button{
+    height: 40px;
+    width: 40px;
+}
+input{
+    background-color: black;
+    height: 50px;
+    width: 385px;
+    margin: 0px 10px ;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+}
+.add{
+    height: 64px;
+    width: 75px;
+    background-color:rgb(233, 147, 61);
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 0px 0px 0px 20px;
+}
+.block{
+    background-color: rgb(16, 86, 52);
+    height: 825px;
+    width: 520px;
+    border-radius: 10px;
+}
+.block_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list5{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
+.list7{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid white;
+    margin: 10px 10px 0px;
+    border-radius: 10px;
+}
