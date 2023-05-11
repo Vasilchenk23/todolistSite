@@ -6,9 +6,10 @@ import React, { useState } from 'react';
 const Block = () => { // короче делаем компонент Block
     const[list, setList] = useState([]); // делаем переменную list и функцию setList для управления состоянием компонента
     const handleAdd = () => { // делаем функцию handleAdd для добавления элемента в список
-        const newItem = document.querySelector('input').value;// получаем значение нового элемента из текстового поля
-        if (newItem) {// проверяем, что значение не пустое
-            setList([...list, newItem]);// добавляем новый элемент в список, используя функцию setList и оператор расширения массива
+        const newInput = document.querySelector('input').value;// получаем значение нового элемента из текстового поля
+        if (newInput && list.length < 7) {// проверяем, что значение не пустое
+            setList([...list, newInput]);// добавляем новый элемент в список, используя функцию setList и оператор расширения массива
+            document.querySelector('input').value = ''; // Очистка строки ввода
         }
     };
     const handleDelete = (index) => { // определяем функцию handleDelete для удаления элемента из списка
@@ -24,7 +25,7 @@ const Block = () => { // короче делаем компонент Block
 <>
   <div className="block">
     <h1 className="block_name">To Do List</h1>
-    <input placeholder="Enter a To Do List" type="text" onKeyDown={handleKeyDown}/>
+    <input placeholder="Enter a To Do List" type="text" onKeyDown={handleKeyDown} maxLength={30}/>
     <button className="add" onClick={handleAdd}>Add</button>
     <div className="list">
       {list.map((item, index) => ( // отображаем каждый элемент списка

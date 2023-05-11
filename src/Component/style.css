@@ -55,6 +55,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list2{
     display: flex;
@@ -64,6 +65,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list3{
     display: flex;
@@ -73,6 +75,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list4{
     display: flex;
@@ -82,6 +85,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list5{
     display: flex;
@@ -91,6 +95,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list6{
     display: flex;
@@ -100,6 +105,7 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
 .list7{
     display: flex;
@@ -109,4 +115,5 @@ input{
     border: 1px solid white;
     margin: 10px 10px 0px;
     border-radius: 10px;
+    font-size: 10px;
 }
