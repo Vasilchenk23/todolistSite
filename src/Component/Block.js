@@ -1,48 +1,71 @@
 import "./../Component/style.css";
 import cansel from "./../img/cancel.png"
+import ok from "./../img/ok.png";
 import pen from "./../img/pen.png";
 import trash from "./../img/trash.png";
 import React, { useState } from 'react';
-const Block = () => { // короче делаем компонент Block
-    const[list, setList] = useState([]); // делаем переменную list и функцию setList для управления состоянием компонента
-    const handleAdd = () => { // делаем функцию handleAdd для добавления элемента в список
-        const newInput = document.querySelector('input').value;// получаем значение нового элемента из текстового поля
-        if (newInput && list.length < 7) {// проверяем, что значение не пустое
-            setList([...list, newInput]);// добавляем новый элемент в список, используя функцию setList и оператор расширения массива
-            document.querySelector('input').value = ''; // Очистка строки ввода
-        }
-    };
-    const handleDelete = (index) => { // определяем функцию handleDelete для удаления элемента из списка
-        const newList = list.filter((item, i) => i !== index); // создаем новый список, в котором удаляем элемент с указанным индексом
-        setList(newList);// обновляем список с помощью функции setList
-    };
-    const handleKeyDown = (event) => { // определяем функцию handleKeyDown для обработки события нажатия клавиши
-        if (event.keyCode === 13) {// проверяем, что нажата клавиша Enter
-          handleAdd();// вызываем функцию handleAdd для добавления нового элемента
-        }
-      };
-    return ( 
-<>
-  <div className="block">
-    <h1 className="block_name">To Do List</h1>
-    <input placeholder="Enter a To Do List" type="text" onKeyDown={handleKeyDown} maxLength={30}/>
-    <button className="add" onClick={handleAdd}>Add</button>
-    <div className="list">
-      {list.map((item, index) => ( // отображаем каждый элемент списка
-        <div key={index} className={`list${index + 1}`}>    
-          <h1>{item}</h1>
-          <div className="list_button1">
-            <button><img src={cansel} alt=""/></button>
-            <button><img src={pen} alt=""/></button>
-            <button><img onClick={() => handleDelete(index)} src={trash} alt=""/></button>
-          </div>
+
+const Block = () => {
+  const [list, setList] = useState([]);
+  const [image, setImage] = useState(cansel);
+
+  const handleAdd = () => {
+    const newInput = document.querySelector('input').value;
+    if (newInput && list.length < 10) {
+      setList([...list, newInput]);
+      document.querySelector('input').value = '';
+    }
+  };
+
+  const handleDelete = (index) => {
+    const newList = list.filter((item, i) => i !== index);
+    setList(newList);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleAdd();
+    }
+  };
+
+  const toggleImage = () => {
+    setImage(image === cansel ? ok : cansel);
+  };
+
+  const handleEdit = (index) => {
+    const itemToEdit = list[index];
+    document.querySelector('input').value = itemToEdit;
+    const newList = list.filter((item, i) => i !== index);
+    setList(newList);
+  }
+
+  return (
+    <>
+      <div className="block">
+        <h1 className="block_name">To Do List</h1>
+        <input placeholder="Enter a To Do List" type="text" onKeyDown={handleKeyDown} maxLength={30} />
+        <button className="add" onClick={handleAdd}>Add</button>
+        <div className="list">
+          {list.map((item, index) => (
+            <div key={index} className={`list${index + 1}`}>
+              <h1>{item}</h1>
+              <div className="list_button1">
+                <button><img src={image} onClick={toggleImage} alt="" /></button>
+                <button><img src={pen} alt="" onClick={() => handleEdit(index)} /></button>
+                <button><img onClick={() => handleDelete(index)} src={trash} alt="" /></button>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</>
-);
-}
+      </div>
+    </>
+  );
+};
+
+export default Block;
+
+
+
 //МЕТОДЫ МАССИВО В JAVASCRIPT
 //push() - добавляет один или несколько элементов в конец массива.
 //pop() - удаляет последний элемент массива и возвращает его значение.
@@ -99,4 +122,3 @@ const Block = () => { // короче делаем компонент Block
 
 
 
-export default Block;
